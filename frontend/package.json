@@ -1,1 +1,5 @@
-{"scripts":{"dev":"vite","build":"tsc && vite build","test":"vitest"},"dependencies":{"@vitejs/plugin-react":"latest","axios":"latest","react":"latest","react-dom":"latest","react-router-dom":"latest","typescript":"latest","vite":"latest","vitest":"latest"},"devDependencies":{}}
+{
+  "scripts": {"dev": "vite", "build": "tsc --noEmit && vite build", "test": "vitest run"},
+  "dependencies": {"@vitejs/plugin-react": "latest", "axios": "latest", "react": "latest", "react-dom": "latest", "react-router-dom": "latest", "typescript": "latest", "vite": "latest", "vitest": "latest"},
+  "devDependencies": {"@types/react": "latest", "@types/react-dom": "latest"}
+}
