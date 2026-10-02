@@ -1,18 +1,20 @@
 # AI Content Assistant
 
-Production-oriented AI content platform built with Django, React, PostgreSQL, Redis, Celery, OpenAI, and pgvector.
+Production-oriented AI content platform using Django REST Framework, React + TypeScript, PostgreSQL/pgvector, Redis, Celery, and OpenAI.
 
-## Status
-Initial architecture scaffold.
+## Implemented
+- Structured AI generation with Pydantic outputs
+- Versioned prompt registry foundation
+- AI telemetry for latency, tokens, model, and estimated cost
+- JWT authentication and DRF throttling
+- Workspace/document/version data model
+- Redis cache and Celery worker integration
+- Database and Redis health checks
+- Django migrations and CI checks
+- Strict React TypeScript/Vite build configuration
 
-## Planned capabilities
-- AI content generation and streaming
-- Versioned prompt engineering
-- RAG knowledge base
-- Workspaces and RBAC
-- Usage/cost analytics
-- Background jobs
-- Audit logging
-- Docker and CI
+## Run
 
-See `docs/architecture.md` for the system design.
+Copy `.env.example` to `.env`, set `OPENAI_API_KEY`, then run `docker compose up --build`.
+
+See `docs/architecture.md` for the architecture and next extension areas: RAG, prompt evaluation, streaming, RBAC/API keys, and analytics.
