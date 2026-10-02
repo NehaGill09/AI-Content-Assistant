@@ -1,0 +1,6 @@
+import React,{useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import axios from 'axios';
+import './styles.css';
+function App(){const [topic,setTopic]=useState('');const [out,setOut]=useState<any>(null);const [busy,setBusy]=useState(false);async function generate(){setBusy(true);try{const r=await axios.post('http://localhost:8000/api/ai/generate/',{topic});setOut(r.data)}finally{setBusy(false)}}return <main><span className="badge">AI CONTENT ASSISTANT</span><h1>Ideas → publish-ready content.</h1><p>Advanced AI workspace built with Django, React, PostgreSQL, Redis, Celery and OpenAI.</p><section><textarea value={topic} onChange={e=>setTopic(e.target.value)} placeholder="Describe what you want to create..." /><button onClick={generate} disabled={busy||!topic}>{busy?'Generating…':'Generate with AI →'}</button>{out&&<article><h2>{out.title}</h2><p>{out.content}</p><small>{out.seo_keywords?.join(' • ')}</small></article>}</section></main>}
+createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
